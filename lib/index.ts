@@ -23,7 +23,7 @@ async function download(
   { tag, name }: Remote,
   local: string
 ): Promise<boolean> {
-  const url = `https://github.com/yao-pkg/pkg-fetch/releases/download/${tag}/${name}`;
+  const url = `https://github.com/cole-mujadzic-liongard/pkg-fetch/releases/download/${tag}/${name}`;
 
   try {
     await downloadUrl(url, local);
@@ -62,9 +62,7 @@ export function satisfyingNodeVersion(nodeRange: string) {
   const nodeVersion = versions.pop();
 
   if (!nodeVersion) {
-    throw wasReported(
-      `No available node version satisfies '${nodeRange}'`
-    );
+    throw wasReported(`No available node version satisfies '${nodeRange}'`);
   }
 
   return nodeVersion;
@@ -84,7 +82,6 @@ export function getNodeVersion(nodeRange: string) {
   const nodeVersion = satisfyingNodeVersion(nodeRange);
   return nodeVersion;
 }
-
 
 export async function need(opts: NeedOptions) {
   // eslint-disable-line complexity
